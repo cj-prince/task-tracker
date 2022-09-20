@@ -1,6 +1,6 @@
 <template>
   <div v-for="task in tasks" :key="task.id">
-    <div :class="['task', task.reminder ? 'reminder' : '']" >
+    <div  @dblclick="$emit('toggle-reminder', task.id)" :class="['task', task.reminder ? 'reminder' : '']" >
       <h3>{{task.text}} <i @click="onDelete(task.id)" class="fas fa-times"></i></h3>
       <p>{{task.day}}</p>
     </div>
@@ -22,7 +22,7 @@
         this.$emit('delete-task', id)
       }
     },
-    emits:['delete-task']
+    emits:['delete-task','toggle-reminder']
   }
 </script>
 

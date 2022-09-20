@@ -1,7 +1,7 @@
 <template>
   <header class="hello">
     <h1>{{title}}</h1>
-    <Button text='Add Task' color='green' />
+    <Button @toggle-addTask="$emit('toggle-addTask')" text='Add Task' color='green' />
   </header>
 </template>
 
